@@ -1,0 +1,19 @@
+{
+	"extension": {
+		"version": "0.8.2026011200",
+		"json": 2
+	},
+	"project": {
+		"name": "V5U_BALAM_MK1_COMP",
+		"description": "High-torque push-and-back specialized control system for Balam MK-1. Engineered for VEX U competition, featuring custom C++ velocity curves, traction stability, and optimized bidirectional drive for field dominance.",
+		"creationDate": "21/1/2026, 4:53:05 p.m.",
+		"platform": "V5",
+		"language": "cpp",
+		"slot": 1,
+		"sdkVersion": "V5_20240802_15_00_00",
+		"cpp": {
+			"includePath": [],
+			"printf_float": true
+		}
+	}
+}

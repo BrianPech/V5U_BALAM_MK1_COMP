@@ -1,0 +1,1 @@
+agregar rampa we al robot tendra una rampa para llegar a las 2 alturas de la base
