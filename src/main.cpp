@@ -116,6 +116,24 @@ void usercontrol(void)
     int backLeftSpeed = throttle - strafe + turn;
     int backRightSpeed = throttle + strafe - turn;
 
+    // Normalización para evitar saturación (mantener el vector de movimiento)
+    // Si alguna velocidad excede 100, escalar proporcionalmente todas
+    int maxSpeed = abs(frontLeftSpeed);
+    if (abs(frontRightSpeed) > maxSpeed)
+      maxSpeed = abs(frontRightSpeed);
+    if (abs(backLeftSpeed) > maxSpeed)
+      maxSpeed = abs(backLeftSpeed);
+    if (abs(backRightSpeed) > maxSpeed)
+      maxSpeed = abs(backRightSpeed);
+
+    if (maxSpeed > 100)
+    {
+      frontLeftSpeed = (frontLeftSpeed * 100) / maxSpeed;
+      frontRightSpeed = (frontRightSpeed * 100) / maxSpeed;
+      backLeftSpeed = (backLeftSpeed * 100) / maxSpeed;
+      backRightSpeed = (backRightSpeed * 100) / maxSpeed;
+    }
+
     // Establecer velocidades de los motores
     FrontLeft.spin(forward, frontLeftSpeed, velocityUnits::pct);
     FrontRight.spin(forward, frontRightSpeed, velocityUnits::pct);
